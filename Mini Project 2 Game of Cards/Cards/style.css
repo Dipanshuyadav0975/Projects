@@ -1,0 +1,78 @@
+*{
+    margin:0%;
+    padding:0%;
+    box-sizing: border-box;
+}
+
+html,body{
+    height: 100%;
+    width:100%;
+}
+
+#main{
+    height: 100%;
+    width:100%;
+    background-image: url(https://external-preview.redd.it/odqgKwzacwZw_9VTCnFXkBhVcAMCX5UUb_rkIiSpzf4.jpg?auto=webp&s=4b6b05530eed1aa37621b58932187797641cf493);
+    background-size: contain;
+    /* display: flex;     we can ignore giving display flex to main instead of flex to main we write some 
+    align-items: center;   other statements that help us to move an object in the middle of a screen.
+    justify-content: center; */
+}
+
+.card{
+    position: absolute; /* independent of parent */
+    top:50%;    /*card moves towards center but only corner of card by using top and left = 50% */
+    left:50%;
+    transform : translate(-50%,-50%);   /* using this : shape wise shift towards center */
+    height: 300px;
+    width: 230px;
+    border :1px solid salmon;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+h1{
+    font-family: 'Gill Sans';
+    color: red;
+}
+
+#card1{
+    z-index: 4;
+}
+
+#card2{
+    z-index: 3;  /* z-index: the greater the number of an object closer to user screen */
+    transform: translate(-50%,-50%) rotate(-8deg);
+}
+
+#card3{
+    z-index: 2;
+    transform: translate(-50%,-50%) rotate(-16deg);
+}
+
+#card4{
+    z-index: 1;
+    transform: translate(-50%,-50%) rotate(-24deg);
+}
+
+img{
+    height: 100%;
+    width:100%;
+    object-fit: cover;
+}
+
+#card1:hover{
+    z-index: 4;
+}
+
+#card2:hover{
+    z-index: 4;
+}
+
+#card3:hover{
+    z-index: 4;
+}
+
+#card4:hover{
+    z-index: 4;
+}
