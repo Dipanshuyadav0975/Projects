@@ -78,15 +78,15 @@ const Header = () => {
 
       </div>
 
-      <nav className='w-full bg-gray-100 flex justify-between items-center gap0-1 lg:px-16 px-6 py-5 sticky top-0 z-50'>
-        <h1 className='text-themepurple font-bold lg:text-[30px] text-3xl underline italic'>Electra Shop</h1>
+      <nav className='w-full bg-gray-100 flex flex-wrap justify-between items-center lg:px-16 px-4 py-4 sticky top-0 z-50 gap-4'>
+        <h1 className='text-themepurple font-bold lg:text-[30px] text-xl md:text-2xl underline italic'>Electra Shop</h1>
         <ul className='lg:flex justify-center items-center gap-10 hidden'>
           {navItems.map(({ link, path }) => (
             <Link key={path} className='text-black text-sm uppercase font-semibold cursor-pointer px-4 py-2 rounded-lg hover:bg-themepurple hover:text-white' to={path} spy={true} offset={-100} smooth={true}>{link}</Link>
           ))}
         </ul>
 
-        <div id='header-icons' className='lg:flex justify-center items-center gap-6 text-black'>
+        <div id='header-icons' className='flex flex-wrap justify-center items-center gap-3 text-black w-full lg:w-auto order-3 lg:order-none'>
           <FaSearch className='w-[20px] h-[20px] transform hover:scale-125 transition-transform duration-300 cursor-pointer hover:text-themepurple' />
           <IoPerson className='w-[20px] h-[20px] transform hover:scale-125 transition-transform duration-300 cursor-pointer hover:text-themepurple' />
           <FaHeart className='w-[20px] h-[20px] transform hover:scale-125 transition-transform duration-300 cursor-pointer hover:text-themepurple' />
@@ -110,14 +110,16 @@ const Header = () => {
           </div>
           {/* User Email */}
           {isLoggedIn && (
-            <p className="text-sm text-gray-700">{user}</p>
+            <p className="text-[10px] md:text-sm text-gray-700 break-all text-center">
+              {user}
+            </p>
           )}
 
           {/* Logout Button */}
           {isLoggedIn && (
             <button
               onClick={handleLogout}
-              className="bg-red-500 text-white px-3 py-1 rounded text-sm"
+              className="bg-red-500 text-white px-2 py-1 rounded text-xs md:text-sm"
             >
               Logout
             </button>
@@ -127,7 +129,7 @@ const Header = () => {
 
         {/* mobile menu starts here */}
 
-        <div className='flex justify-center items-center lg:hidden mt-3' onClick={toggleMenu}>
+        <div className='flex justify-center items-center lg:hidden ml-auto' onClick={toggleMenu}>
           <div>
             {isMenuOpen ? <FaXmark className='text-themepurple text-3xl cursor-pointer' /> : <FaBars className='text-themepurple text-3xl cursor-pointer' />}
           </div>
